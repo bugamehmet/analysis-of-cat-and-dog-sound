@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-
 import scipy.io.wavfile as sci_wav
 import random
 
@@ -113,11 +112,17 @@ model.add(BatchNormalization())
 model.add(Dropout(0.5))
 model.add(Dense(1, activation='sigmoid'))
 model.summary()
+#model.save_weights('catanddog.weights.h5', overwrite=True)
+
+# Modeli kaydedin (mimari ve ağırlıklar)
+model.save('model_with_weights.h5')
+
+
 
 NUM_EPOCHS = 50
 adam_optimizer = Adam(decay=None)
 model.compile(loss='binary_crossentropy', optimizer=adam_optimizer, metrics=['accuracy'])
-NUM_EPOCHS = 50
+
 
 train_loss = []
 val_loss = []
