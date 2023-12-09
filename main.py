@@ -115,7 +115,7 @@ model.summary()
 #model.save_weights('catanddog.weights.h5', overwrite=True)
 
 # Modeli kaydedin (mimari ve ağırlıklar)
-model.save('model_with_weights.h5')
+model.save('model_with_weights.keras')
 
 
 
